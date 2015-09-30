@@ -1,13 +1,18 @@
 from django.db import models
 
+from urlparse import urlparse
+
 # Create your models here..
 
 class Story(models.Model):
-    title
-    url
+    title = models.CharField(max_length=200)
+    url = models.URLField()
     points
     poster
     created_at
     updated_at
 
-https://github.com/anthonymiyoro/HackerNewsClone.git
+
+@property
+def domain(self):
+   return urlparse(self.url).netloc
