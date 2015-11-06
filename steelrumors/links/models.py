@@ -12,3 +12,10 @@ class Link(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Vote(models.Model):
+    voter = models.ForeignKey(User)
+    link = models.ForeignKey(Link)
+
+    def __unicode__(self):
+        return "%s voted %s" % (self.voter.username, self.link.title)
