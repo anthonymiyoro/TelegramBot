@@ -5,3 +5,4 @@ from .models import Link, Vote
 # Create your views here.
 class LinkListView(ListView):
     model = Link
+    queryset = Link.with_votes.all()

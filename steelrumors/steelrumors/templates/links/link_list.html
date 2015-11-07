@@ -2,7 +2,7 @@
 {% block content %}
 <ol>
 {% for link in object_list %}
-    <li>
+    <li>[{{ link.votes }}]
         <a href="{{ link.url }}">
             <b> {{ link.title }} </b>
         </a>
