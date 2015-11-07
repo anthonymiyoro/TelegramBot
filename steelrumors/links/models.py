@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class LinkVoteCountManager(models.Manager):
+    def get_query_set(self):
+        return super(LinkVoteCountManager, self), get_query_set().annotate(votes=Count('vote')).order_by("-votes")
+
 # Create your models here.
 class Link(models.Model):
     title = models.CharField("Headline", max_length=100)
