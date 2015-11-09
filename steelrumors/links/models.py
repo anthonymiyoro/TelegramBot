@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class LinkVoteCountManager(models.Manager):
-    def get_query_set(self):
-        return super(LinkVoteCountManager, self), get_query_set().annotate(votes=Count('vote')).order_by("-votes")
+    def get_queryset(self):
+        return super(LinkVoteCountManager, self), get_queryset().annotate(votes=Count('vote')).order_by("-votes")
 
 class Link(models.Model):
     title = models.CharField("Headline", max_length=100)
@@ -20,6 +20,7 @@ class Link(models.Model):
 
     def __unicode__(self):
         return self.title
+
 
 class Vote(models.Model):
     voter = models.ForeignKey(User)
