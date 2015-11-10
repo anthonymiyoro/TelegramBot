@@ -41,6 +41,13 @@ INSTALLED_APPS = (
     'steelrumors',
 )
 
+from django.core.urlsolvers import reverse_lazy
+
+LOGOUT_URL=reverse_lazy("login")
+LOGIN_URL=reverse_lazy("logout")
+LOGIN_REDIRECT_URL=reverse_lazy("home")
+
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
