@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Count
 
 # Create your models here.
 
@@ -17,7 +18,7 @@ class Link(models.Model):
     description = models.TextField(blank=True)
 
     with_votes = LinkVoteCountManager()
-    objects = models.manager
+    objects = models.Manager #this is the default manager
 
     def __unicode__(self):
         return self.title
