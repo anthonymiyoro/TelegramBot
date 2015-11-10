@@ -20,5 +20,6 @@ from links.views import LinkListView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', LinkListView.as_view(), name='home')
+    url(r'^$', LinkListView.as_view(), name='home'),
+    url(r'^login/$', 'django.contrib.auth.views.login',{'template_name': 'login.html'}, name="login"),
 ]
