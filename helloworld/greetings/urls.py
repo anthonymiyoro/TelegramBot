@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.http import HttpResponse
-
+from views import hello
 
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'greetings.views.hello'),
+    url(r'^$', include('greetings.urls')),
 ]
