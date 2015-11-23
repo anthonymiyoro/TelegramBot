@@ -14,3 +14,9 @@ class Story(models.Model):
     @property
     def domain(self):
         return urlparse(self.url).netloc
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "stories"
