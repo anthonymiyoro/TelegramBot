@@ -22,10 +22,10 @@ HACKER_NEWS_API_URL = 'http://api.ihackernews.com/page'
 
 # The Hacker News API errors out from time to time, this number controls
 # how many times the script attempts to retrieve the data from the service.
-RETRY_ATTEMPTS = 3
+RETRY_ATTEMPTS = 5
 
 # TODO: change the username to your username
-USERNAME='croach'
+USERNAME='amiyoro'
 
 def created_at(item):
     # Get the value and precision from the item
