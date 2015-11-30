@@ -5,7 +5,7 @@ from django.utils.timezone import utc
 import datetime
 
 def score(story, gravity=1.8, timebase=120):
-    points = (story.points -1)**0.8
+    points = (story.points - 1 ) * 0.8
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
     age = int((now - story.created_at).total_seconds())/60
 
