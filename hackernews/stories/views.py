@@ -1,12 +1,15 @@
+import datetime
+
 from django.template import loader, Context
 from django.shortcuts import render
 from django.http import HttpResponse
-from stories.models import Story
 from django.utils.timezone import utc
-import datetime
+
+from stories.models import Story
+
 
 def score(story, gravity=1.8, timebase=120):
-    points = (story.points - 1 ) * 0.8
+    points = (story.points - 1 )**0.8
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
     age = int((now - story.created_at).total_seconds())/60
 
@@ -24,4 +27,4 @@ def index(request):
     template = loader.get_template('stories/index.html')
     context = Context({'stories': stories})
     response = template.render(context)
-    return HttpResponse('The Main Page')
+    return HttpResponse(response)
