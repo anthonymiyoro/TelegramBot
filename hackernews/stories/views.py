@@ -21,7 +21,7 @@ def top_stories(top=180, consider=1000):
 # Create your views here.
 def index(request):
     stories = top_stories(top=30)
-    template = loader.get_template('index.html')
+    template = loader.get_template('stories/index.html')
     context = Context({'stories': stories})
     response = template.render(context)
     return HttpResponse('The Main Page')
