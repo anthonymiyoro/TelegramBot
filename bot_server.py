@@ -24,5 +24,6 @@ def main():
     updater.idle()
     
 # If file is ran, run the main function
-if __name__ == 'main':
+if __name__ == '__main__':
+    print ("start")
     main()
