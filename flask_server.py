@@ -38,7 +38,7 @@ def set_webhook():
 
 @app.route('/')
 def index():
-    return '.'
+    return 'This is a Flask bot server :^)'
 
 
 if __name__ == '__main__':
