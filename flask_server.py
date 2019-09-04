@@ -25,19 +25,16 @@ def respond():
     print("got text message :", text)
 
     # # Run response function on the text we got as input
-    # response = get_response(text)
-    # print ("response", response)
+    # run function that provides replies to messeges
 
-    if text == "/start" or text == "/hello":
-        bot.sendMessage(chat_id, "Hello, I'm the therapist.  How can I help?")
-        print ("Init message")
-    else:
-        bot.sendMessage(chat_id, eliza_chatbot.respond(text))
+    response = get_response(text, bot, chat_id)
+    print ("response", response)
+
+
+
 
     # bot.sendMessage(chat_id=chat_id, text=response, reply_to_message_id=msg_id)
 
-    # run function that provides replies to messeges
-    # bop(bot, update, chat_id, msg_id)
 
     return 'ok'
 
